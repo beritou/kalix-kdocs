@@ -1,0 +1,43 @@
+site_name: Kalix
+site_url: https://example.com/
+nav:
+  - Docs:
+    - Getting Started: index.md
+    - Developing Services:
+      - Java/Scala: kalix-jvm-sdk/README.md
+      - JavaScript/TypeScript: kalix-javascript-sdk/README.md
+    - Operating Services: operating.md
+ 
+  - Learn: learn.md
+  - Support: support.md
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
+plugins:
+  - multirepo:
+      # (optional) tells multirepo to cleanup the temporary directory after site is built.
+      cleanup: true
+      # if set the docs directory will not be removed when importing docs.
+      # When using this with a nav section in an imported repo you must keep the
+      # docs directory in the path (e.g., docs/path/to/file.md).
+      keep_docs_dir: true
+      nav_repos:
+        - name: kalix-jvm-sdk
+          import_url: https://github.com/lightbend/kalix-jvm-sdk?branch=main
+          imports: [/README.md]
+        - name: kalix-javascript-sdk
+          import_url: https://github.com/lightbend/kalix-javascript-sdk?branch=main
+          imports: [/README.md]
+markdown_extensions:
+  - pymdownx.snippets
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
