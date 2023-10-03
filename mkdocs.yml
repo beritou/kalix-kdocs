@@ -16,6 +16,8 @@ theme:
     - navigation.tabs
     - content.code.copy
     - content.code.annotate
+  palette:
+    primary: amber
 plugins:
   - multirepo:
       # (optional) tells multirepo to cleanup the temporary directory after site is built.
