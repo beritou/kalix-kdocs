@@ -33,6 +33,7 @@ plugins:
         - name: kalix-javascript-sdk
           import_url: https://github.com/lightbend/kalix-javascript-sdk?branch=main
           imports: [/README.md]
+  - search
 markdown_extensions:
   - pymdownx.snippets
   - pymdownx.highlight:
